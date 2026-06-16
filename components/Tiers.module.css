@@ -10,6 +10,11 @@
   margin-top: 40px;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
 .card[data-featured] {
   outline: 2px solid var(--ohp-orange);
   outline-offset: -2px;
@@ -17,6 +22,9 @@
 
 .body {
   padding: 30px 28px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .labelRow {
@@ -88,6 +96,21 @@
 .blurb {
   font: var(--text-body-s);
   color: var(--color-fg-2);
+}
+
+/* CTA pinned to the bottom of each card so all three align horizontally */
+.ctaWrap {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.tierCta {
+  width: 100%;
+  justify-content: center;
+  --btn-bg: var(--accent-label);
+  --btn-fg: var(--accent-on);
+  --btn-shadow: var(--shadow-sm);
+  --btn-bg-hover: color-mix(in srgb, var(--accent-label) 88%, #000);
 }
 
 @media (max-width: 860px) {

@@ -2,12 +2,13 @@
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  background: var(--color-primary);
-  color: #fff;
+  /* Themeable via CSS vars; defaults keep the standard blue primary CTA. */
+  background: var(--btn-bg, var(--color-primary));
+  color: var(--btn-fg, #fff);
   text-transform: uppercase;
   border: none;
   border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-blue);
+  box-shadow: var(--btn-shadow, var(--shadow-blue));
   cursor: pointer;
   white-space: nowrap;
   transition:
@@ -17,7 +18,7 @@
 }
 
 .btn:hover {
-  background: var(--color-primary-hover);
+  background: var(--btn-bg-hover, var(--color-primary-hover));
 }
 
 .btn:active {
