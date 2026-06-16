@@ -1,0 +1,44 @@
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px clamp(20px, 5vw, 56px);
+}
+
+.logo {
+  height: 27px;
+  width: auto;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.link {
+  font: var(--text-button);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--dur-base) var(--ease-out);
+}
+
+.link:hover {
+  color: #fff;
+}
+
+@media (max-width: 720px) {
+  .right {
+    gap: 16px;
+  }
+  /* Keep mobile nav clean: logo + donate CTA only */
+  .link {
+    display: none;
+  }
+  .logo {
+    height: 22px;
+  }
+}

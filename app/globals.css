@@ -1,0 +1,74 @@
+/* =============================================================
+   Global base — resets, motion, and font-token wiring.
+   The OHP design-system tokens live in styles/colors_and_type.css
+   (imported before this file in app/layout.tsx).
+   ============================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Map the design-system font tokens onto the self-hosted next/font CSS variables.
+   The DS file declares these with literal family names ("Montserrat", etc.);
+   we override them here so the optimized, self-hosted faces are used instead. */
+:root {
+  --font-display: var(--font-montserrat), system-ui, sans-serif;
+  --font-friendly: var(--font-comfortaa), system-ui, sans-serif;
+  --font-body: var(--font-montserrat), system-ui, sans-serif;
+  --font-accent: var(--font-montserrat), system-ui, sans-serif;
+  --font-hand: var(--font-fuzzy), var(--font-comfortaa), cursive;
+  /* sub-brand (Huntsville Hope Classic) faces */
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-poppins: var(--font-poppins), system-ui, sans-serif;
+}
+
+/* Horizontal marquee used in the hero ("Huntsville Hope Classic") */
+@keyframes hhc-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Anchored scroll target (The Wall) — small offset so it isn't flush to the top */
+:target {
+  scroll-margin-top: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  [data-hhc-track] {
+    animation: none !important;
+  }
+}
