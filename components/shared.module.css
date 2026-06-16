@@ -1,0 +1,60 @@
+/* Shared layout primitives reused across sections (imported as a CSS Module). */
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 56px);
+}
+
+.narrow {
+  max-width: 920px;
+}
+
+.eyebrow {
+  font: var(--text-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-primary);
+}
+
+.h2 {
+  font: var(--text-h2);
+  letter-spacing: -0.02em;
+  color: var(--color-fg);
+  margin: 0;
+}
+
+.lead {
+  font: var(--text-lead);
+  color: var(--color-fg-2);
+  margin: 0;
+}
+
+/* Centered section header block */
+.centerHead {
+  text-align: center;
+}
+
+.centerHead .h2 {
+  margin-top: 10px;
+}
+
+/* Generic accent-aware card (white surface, colored top stripe).
+   Consumers set --accent / --accent-text / --accent-soft via accentVars(). */
+.card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: box-shadow var(--dur-base) var(--ease-out);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.cardStripe {
+  height: 6px;
+  background: var(--accent);
+}

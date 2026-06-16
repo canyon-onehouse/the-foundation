@@ -1,0 +1,97 @@
+.section {
+  padding-top: 64px;
+  padding-bottom: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.card[data-featured] {
+  outline: 2px solid var(--ohp-orange);
+  outline-offset: -2px;
+}
+
+.body {
+  padding: 30px 28px 32px;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.label {
+  font: var(--text-overline);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent-label);
+}
+
+.badge {
+  font: var(--text-overline);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  background: var(--ohp-orange-soft);
+  color: #9a6612;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.name {
+  font-family: var(--font-friendly);
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--color-fg);
+  margin: 6px 0 0;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin: 14px 0 0;
+}
+
+.price {
+  font: 800 40px/1 var(--font-display);
+  color: var(--color-fg);
+}
+
+.period {
+  font: var(--text-body-s);
+  color: var(--color-fg-3);
+}
+
+.blurbRow {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-line);
+}
+
+.check {
+  color: var(--accent-label);
+  font-size: 18px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.blurb {
+  font: var(--text-body-s);
+  color: var(--color-fg-2);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

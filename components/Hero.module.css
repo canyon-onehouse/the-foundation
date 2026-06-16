@@ -1,0 +1,197 @@
+.hero {
+  --hero-bg: #1b222c;
+  --hero-glow: 2, 154, 255;
+  position: relative;
+  overflow: hidden;
+  background: var(--hero-bg);
+}
+
+.burst1,
+.burst2 {
+  position: absolute;
+  pointer-events: none;
+}
+
+.burst1 {
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 70% at 50% -6%,
+    rgba(var(--hero-glow), 0.3),
+    rgba(var(--hero-glow), 0.06) 42%,
+    transparent 70%
+  );
+}
+
+.burst2 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 520px;
+  background: radial-gradient(
+    ellipse 50% 100% at 50% 0%,
+    rgba(var(--hero-glow), 0.18),
+    transparent 72%
+  );
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  padding: 64px clamp(20px, 5vw, 56px) 96px;
+}
+
+.h1 {
+  font:
+    800 clamp(58px, 10vw, 134px) / 0.9 var(--font-display);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+/* reveal */
+.reveal {
+  margin-top: 56px;
+}
+
+.overlineRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 24px;
+}
+
+.hairline {
+  width: 28px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.overline {
+  font: var(--text-overline);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.wordmark {
+  display: block;
+  width: min(544px, 67vw);
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0 14px 44px rgba(2, 154, 255, 0.3));
+}
+
+/* beat 3 — free ticket marquee (temporary) */
+.beat3 {
+  margin-top: 56px;
+}
+
+.beat3Label {
+  font: var(--text-overline);
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  color: rgba(247, 243, 230, 0.6);
+  margin-bottom: 18px;
+}
+
+.marqueeMask {
+  position: relative;
+  overflow: hidden;
+  padding: 6px 0;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 14%,
+    #000 86%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 14%,
+    #000 86%,
+    transparent
+  );
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: hhc-marquee 38s linear infinite;
+  will-change: transform;
+}
+
+.marqueeItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 38px;
+  margin-right: 38px;
+  white-space: nowrap;
+}
+
+.marqueeText {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(30px, 4.6vw, 54px);
+  line-height: 1;
+  color: rgba(247, 243, 230, 0.9);
+}
+
+.marqueeHope {
+  font-style: italic;
+  color: #c9b47a;
+}
+
+.marqueeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a99560;
+  flex-shrink: 0;
+}
+
+/* CTAs */
+.ctas {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 44px;
+  flex-wrap: wrap;
+}
+
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  font: var(--text-button-l);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 15px 26px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background var(--dur-base) var(--ease-out);
+}
+
+.secondaryCta:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding-top: 40px;
+    padding-bottom: 72px;
+  }
+  .reveal,
+  .beat3 {
+    margin-top: 44px;
+  }
+  .ctas {
+    margin-top: 36px;
+  }
+}

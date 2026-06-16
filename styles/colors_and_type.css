@@ -1,0 +1,201 @@
+/* =============================================================
+   One House Project — Colors & Type
+   Source: Branding Sheet.png (sampled), Figma K1 UI Kit (structure)
+   Fonts loaded from Google Fonts — see fonts/README.md
+   ============================================================= */
+
+/* Fonts are self-hosted via next/font (see app/layout.tsx); the remote @import was removed. */
+
+:root {
+  /* ---------- BRAND PALETTE (sampled from Branding Sheet) ---------- */
+  --ohp-blue-pale: #F2F9FF;       /* tinted background */
+  --ohp-blue:      #029AFF;       /* primary blue (logo, links, CTAs) */
+  --ohp-orange:    #FFAE45;       /* warmth — Crisis program */
+  --ohp-pink:      #F9BBC6;       /* support — Direct Assistance program */
+  --ohp-yellow:    #FFDB57;       /* uplift — Affordable Housing program */
+  --ohp-green:     #24CB97;       /* growth — Community Events program */
+  --ohp-dark:      #252C36;       /* near-black, primary text */
+
+  /* Derived neutrals (warm-cool slate, derived from --ohp-dark) */
+  --ohp-ink:       #252C36;       /* body text */
+  --ohp-ink-2:     #4A5260;       /* secondary text */
+  --ohp-ink-3:     #6E7783;       /* tertiary / captions */
+  --ohp-mute:      #A8B0BC;       /* placeholder / disabled */
+  --ohp-line:      #E2E7EE;       /* hairline borders */
+  --ohp-line-2:    #EFF3F8;       /* faint dividers / fills */
+  --ohp-surface:   #FFFFFF;       /* cards, sheets */
+  --ohp-bg:        #FBFCFE;       /* page background (subtle blue cast) */
+  --ohp-bg-tint:   #F2F9FF;       /* hero / section accent bg */
+
+  /* Hover / pressed (derived) */
+  --ohp-blue-hover:   #0083DB;
+  --ohp-blue-press:   #006DB7;
+  --ohp-blue-soft:    #DDEEFF;    /* tinted bg for blue surfaces */
+  --ohp-orange-soft:  #FFE7C9;
+  --ohp-pink-soft:    #FDE5EA;
+  --ohp-yellow-soft:  #FFF1B7;
+  --ohp-green-soft:   #C8F2E2;
+
+  /* ---------- SEMANTIC COLOR TOKENS ---------- */
+  --color-bg:           var(--ohp-bg);
+  --color-bg-tint:      var(--ohp-bg-tint);
+  --color-surface:      var(--ohp-surface);
+  --color-surface-alt:  var(--ohp-blue-pale);
+
+  --color-fg:           var(--ohp-ink);
+  --color-fg-2:         var(--ohp-ink-2);
+  --color-fg-3:         var(--ohp-ink-3);
+  --color-fg-mute:      var(--ohp-mute);
+  --color-fg-on-brand:  #FFFFFF;
+
+  --color-line:         var(--ohp-line);
+  --color-line-soft:    var(--ohp-line-2);
+
+  --color-primary:        var(--ohp-blue);
+  --color-primary-hover:  var(--ohp-blue-hover);
+  --color-primary-press:  var(--ohp-blue-press);
+  --color-primary-soft:   var(--ohp-blue-soft);
+
+  --color-success:        var(--ohp-green);
+  --color-warn:           var(--ohp-yellow);
+  --color-warm:           var(--ohp-orange);    /* used for crisis / urgent */
+  --color-soft:           var(--ohp-pink);
+  --color-danger:         #EC4747;              /* drawn from figma kit */
+  --color-focus-ring:     #8AA8FF;
+
+  /* Program-specific accents */
+  --program-crisis:       var(--ohp-orange);
+  --program-direct:       var(--ohp-pink);
+  --program-housing:      var(--ohp-yellow);
+  --program-community:    var(--ohp-blue);
+  --program-events:       var(--ohp-green);
+
+  /* ---------- TYPOGRAPHY FAMILIES ----------
+     Display work (hero, h1, h2, big numbers) is carried by Montserrat 800
+     — its caps and tighter geometry hold up at scale where Comfortaa's
+     round bowls felt juvenile. Comfortaa is reserved for h3/h4-size
+     subheaders, the wordmark, and decorative moments where its
+     roundness is delightful rather than overwhelming. */
+  --font-display: "Montserrat", system-ui, sans-serif;  /* hero + h1/h2 — sentence case */
+  --font-friendly:"Comfortaa", system-ui, sans-serif;   /* h3/h4, wordmark, subheaders */
+  --font-body:    "Montserrat", system-ui, sans-serif;  /* body & UI */
+  --font-accent:  "Montserrat", system-ui, sans-serif;  /* UPPER CASE, BOLD — eyebrows, overlines, buttons */
+  --font-hand:    "Fuzzy Bubbles", "Comfortaa", cursive;/* handwritten — emphasis, decorative accents */
+
+  /* ---------- TYPE SCALE ---------- */
+  /* Display: Montserrat 800, sentence case, tight tracking */
+  --text-display-xl: 800 88px/1.02 var(--font-display);
+  --text-display-l:  800 64px/1.05 var(--font-display);
+  --text-display-m:  800 48px/1.08 var(--font-display);
+  --text-display-s:  800 36px/1.14 var(--font-display);
+
+  /* H1/H2 also Montserrat 800 — H3/H4 swap to Comfortaa for warmth */
+  --text-h1: 800 40px/1.15 var(--font-display);
+  --text-h2: 800 32px/1.2  var(--font-display);
+  --text-h3: 700 24px/1.28 var(--font-friendly);
+  --text-h4: 700 20px/1.32 var(--font-friendly);
+
+  /* Body uses Montserrat */
+  --text-lead:   400 20px/1.55 var(--font-body);
+  --text-body:   400 16px/1.6  var(--font-body);
+  --text-body-s: 400 14px/1.55 var(--font-body);
+  --text-caption:500 12px/1.4  var(--font-body);
+
+  /* Accent / eyebrow uses MONTSERRAT BOLD UPPERCASE w/ tracking */
+  --text-eyebrow:  800 13px/1.2 var(--font-accent);
+  --text-overline: 700 11px/1.2 var(--font-accent);
+  --text-button:   700 14px/1   var(--font-accent);
+  --text-button-l: 700 16px/1   var(--font-accent);
+
+  /* ---------- SPACING (8px base, tightened to 4 for fine details) ---------- */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* ---------- RADII ----------
+     OHP loves friendly, generous corners (Comfortaa-style roundness).
+     Pills for CTAs, big rounding on cards. */
+  --radius-xs:  6px;
+  --radius-sm:  10px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
+  --radius-2xl: 40px;
+  --radius-pill: 999px;
+
+  /* ---------- ELEVATION / SHADOWS ----------
+     Soft, slightly blue-cast shadows derived from figma usage of
+     rgba(79,106,197,0.15) — softened for the friendlier OHP feel. */
+  --shadow-xs: 0 1px 2px rgba(37, 44, 54, 0.06);
+  --shadow-sm: 0 2px 6px rgba(37, 44, 54, 0.08);
+  --shadow-md: 0 8px 20px rgba(37, 44, 54, 0.10);
+  --shadow-lg: 0 16px 40px rgba(37, 44, 54, 0.12);
+  --shadow-blue: 0 12px 32px rgba(2, 154, 255, 0.20);
+  --shadow-focus: 0 0 0 3px rgba(2, 154, 255, 0.28);
+
+  /* ---------- MOTION ---------- */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 360ms;
+}
+
+/* =============================================================
+   Base / semantic element styles — drop these into any project.
+   Use the variables above when composing new components.
+   ============================================================= */
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 { font: var(--text-h1); color: var(--color-fg); margin: 0; letter-spacing: -0.03em; }
+h2, .h2 { font: var(--text-h2); color: var(--color-fg); margin: 0; letter-spacing: -0.025em; }
+h3, .h3 { font: var(--text-h3); color: var(--color-fg); margin: 0; letter-spacing: -0.005em; text-transform: lowercase; }
+h4, .h4 { font: var(--text-h4); color: var(--color-fg); margin: 0; text-transform: lowercase; }
+
+.display-xl { font: var(--text-display-xl); letter-spacing: -0.035em; }
+.display-l  { font: var(--text-display-l);  letter-spacing: -0.03em; }
+.display-m  { font: var(--text-display-m);  letter-spacing: -0.025em; }
+.display-s  { font: var(--text-display-s);  letter-spacing: -0.02em; }
+
+.friendly { font-family: var(--font-friendly); }
+
+.lead    { font: var(--text-lead); color: var(--color-fg-2); }
+.body    { font: var(--text-body); }
+.body-s  { font: var(--text-body-s); }
+.caption { font: var(--text-caption); color: var(--color-fg-3); }
+
+.eyebrow  { font: var(--text-eyebrow);  text-transform: uppercase; letter-spacing: 0.14em; color: var(--color-primary); }
+.overline { font: var(--text-overline); text-transform: uppercase; letter-spacing: 0.18em; color: var(--color-fg-3); }
+
+.hand    { font-family: var(--font-hand); font-weight: 700; }
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { color: var(--color-primary-hover); text-decoration: underline; text-underline-offset: 3px; }
+
+::selection { background: var(--ohp-blue-soft); color: var(--ohp-dark); }
+
+/* Focus ring used across the kit */
+.focus-ring:focus-visible,
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}

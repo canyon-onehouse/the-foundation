@@ -1,0 +1,62 @@
+.section {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.card {
+  background: #1b4332;
+  border-radius: var(--radius-xl);
+  padding: 44px 48px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.iconBox {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  background: rgba(201, 162, 39, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 30px;
+  color: #e0bc4b;
+}
+
+.eyebrow {
+  font: var(--text-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #e0bc4b;
+}
+
+.text {
+  font-family: var(--font-friendly);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.3;
+  color: #fff;
+  margin: 8px 0 0;
+  max-width: 760px;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 30px 26px;
+    gap: 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .text {
+    font-size: 20px;
+  }
+}
