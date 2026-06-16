@@ -1,6 +1,7 @@
 import { CheckCircleIcon } from "@phosphor-icons/react/ssr";
 import { TIERS } from "@/content/tiers";
 import { accentVars } from "@/lib/accents";
+import { BecomeFounderButton } from "./BecomeFounderButton";
 import shared from "./shared.module.css";
 import styles from "./Tiers.module.css";
 
@@ -34,6 +35,14 @@ export function Tiers() {
               <div className={styles.blurbRow}>
                 <CheckCircleIcon className={styles.check} aria-hidden />
                 <span className={styles.blurb}>{tier.blurb}</span>
+              </div>
+              <div className={styles.ctaWrap}>
+                <BecomeFounderButton
+                  size="lg"
+                  arrow
+                  label="join the project"
+                  className={styles.tierCta}
+                />
               </div>
             </div>
           </div>
