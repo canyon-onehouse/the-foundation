@@ -69,7 +69,7 @@ export function Hero() {
         {/* END TEMPORARY */}
 
         <div className={styles.ctas}>
-          <BecomeFounderButton size="lg" arrow />
+          <BecomeFounderButton size="lg" arrow className={styles.heroCta} />
           <a href="#wall" className={styles.secondaryCta}>
             see the wall
           </a>

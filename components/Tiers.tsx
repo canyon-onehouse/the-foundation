@@ -40,7 +40,6 @@ export function Tiers() {
                 <BecomeFounderButton
                   size="lg"
                   arrow
-                  label="join the project"
                   className={styles.tierCta}
                 />
               </div>

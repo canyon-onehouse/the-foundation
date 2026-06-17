@@ -46,6 +46,7 @@ npm run lint
 The ticket-drop campaign is **time-limited** (membership deadline Jun 23, 2026; drop Jun 24–26, 2026).
 When it closes, remove these — each is fenced with `TEMPORARY … remove after the drop closes` comments:
 
+- `components/StickyBanner.tsx` (the sticky top countdown banner) + its `<StickyBanner />` in `app/page.tsx`
 - `components/TicketDrop.tsx` (the whole section)
 - the free-ticket marquee in `components/Hero.tsx`
 - `components/ExclusivityCallout.tsx`

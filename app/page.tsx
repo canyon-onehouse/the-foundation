@@ -1,3 +1,4 @@
+import { StickyBanner } from "@/components/StickyBanner";
 import { Hero } from "@/components/Hero";
 import { WhatItIs } from "@/components/WhatItIs";
 import { ExclusivityCallout } from "@/components/ExclusivityCallout";
@@ -14,6 +15,9 @@ import { Footer } from "@/components/Footer";
 export default function Home() {
   return (
     <main>
+      {/* TEMPORARY (ticket drop): sticky free-ticket countdown banner —
+          remove after the drop closes (see component header). */}
+      <StickyBanner />
       <Hero />
       <WhatItIs />
       {/* TEMPORARY (ticket drop): ExclusivityCallout, BrandMoment, TicketDrop —
