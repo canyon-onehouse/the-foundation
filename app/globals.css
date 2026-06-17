@@ -51,16 +51,6 @@ a {
   --font-poppins: var(--font-poppins), system-ui, sans-serif;
 }
 
-/* Horizontal marquee used in the hero ("Huntsville Hope Classic") */
-@keyframes hhc-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 /* Anchored scroll target (The Wall) — small offset so it isn't flush to the top */
 :target {
   scroll-margin-top: 16px;

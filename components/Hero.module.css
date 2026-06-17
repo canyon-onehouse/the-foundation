@@ -124,6 +124,18 @@
   will-change: transform;
 }
 
+/* Keyframes co-located with the consumer so CSS-Module scoping matches the
+   animation reference above (a global @keyframes gets a mismatched scoped name
+   under Turbopack and the marquee stops animating). */
+@keyframes hhc-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .marqueeItem {
   display: inline-flex;
   align-items: center;
