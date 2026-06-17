@@ -68,13 +68,6 @@
   line-height: 1.15;
 }
 
-.overline {
-  font: 700 10px/1.15 var(--font-body);
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  color: #a99560;
-}
-
 .headline {
   font-family: var(--font-friendly);
   font-weight: 700;
@@ -161,12 +154,12 @@
     padding: 8px 16px;
     gap: 10px 18px;
   }
+  .lines {
+    align-items: center;
+  }
   .headline {
     font-size: 13px;
-  }
-  .overline {
-    font-size: 9px;
-    letter-spacing: 0.18em;
+    text-align: center;
   }
   .ticket {
     font-size: 20px;

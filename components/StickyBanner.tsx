@@ -56,9 +56,8 @@ export function StickyBanner() {
         <div className={styles.message}>
           <TicketIcon className={styles.ticket} aria-hidden />
           <div className={styles.lines}>
-            <span className={styles.overline}>free ticket window closes</span>
             <span className={styles.headline}>
-              join the project by june 23 to claim your tickets
+              get a free $600 golf ticket by june 23
             </span>
           </div>
         </div>
