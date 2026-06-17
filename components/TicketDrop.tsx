@@ -78,7 +78,9 @@ export function TicketDrop() {
             <span className={styles.goldDot} />
             <span className={styles.goldLine} />
           </div>
-          <div className={styles.theDrop}>the ticket drop</div>
+          <div className={styles.theDrop}>
+            june 29 • canebrake club • golf tournament
+          </div>
         </div>
       </div>
 
