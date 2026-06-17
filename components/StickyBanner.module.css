@@ -1,8 +1,22 @@
 .banner {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 60;
   background: #1d3a23;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.26);
+}
+
+/* faint gold light pooling from the top */
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 140% at 50% 0%,
+    rgba(169, 149, 96, 0.14),
+    transparent 70%
+  );
+  pointer-events: none;
 }
 
 /* gold bottom hairline */
@@ -12,60 +26,102 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(169, 149, 96, 0.6) 50%,
+    #a99560 16%,
+    #c9b47a 50%,
+    #a99560 84%,
     transparent
   );
 }
 
 .inner {
-  max-width: 1180px;
+  position: relative;
+  max-width: 1280px;
   margin-inline: auto;
-  padding: 10px clamp(16px, 4vw, 40px);
+  padding: 10px 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 14px 30px;
   flex-wrap: wrap;
 }
 
-.chip {
-  display: inline-flex;
+/* ----- message ----- */
+.message {
+  display: flex;
   align-items: center;
-  gap: 7px;
-  font: 700 12px/1 var(--font-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #1d3a23;
-  background: #c9b47a;
-  padding: 6px 12px;
-  border-radius: var(--radius-pill);
-  white-space: nowrap;
+  gap: 13px;
+}
+
+.ticket {
+  font-size: 24px;
+  color: #c9b47a;
   flex-shrink: 0;
 }
 
-.chip svg {
-  font-size: 14px;
+.lines {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
 }
 
-.message {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #f7f3e6;
-  margin: 0;
-  text-align: center;
+.overline {
+  font: 700 10px/1.15 var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #a99560;
 }
 
-.gold {
-  color: #d4c088;
+.headline {
+  font-family: var(--font-friendly);
   font-weight: 700;
+  font-size: 15px;
+  color: #f7f3e6;
 }
 
+/* ----- countdown ----- */
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 48px;
+  background: rgba(169, 149, 96, 0.12);
+  border: 1px solid rgba(169, 149, 96, 0.32);
+  border-radius: 8px;
+  padding: 6px 8px 5px;
+}
+
+.num {
+  font: 800 23px/1 var(--font-display);
+  color: #f4e2b0;
+  font-variant-numeric: tabular-nums;
+}
+
+.unit {
+  font: 700 9px/1 var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #a99560;
+  margin-top: 4px;
+}
+
+.sep {
+  font: 800 18px/1 var(--font-display);
+  color: rgba(169, 149, 96, 0.55);
+  align-self: flex-start;
+  margin-top: 7px;
+}
+
+/* ----- cta ----- */
 .cta {
   display: inline-flex;
   align-items: center;
@@ -74,14 +130,14 @@
   color: #1d3a23;
   font: var(--text-button);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 10px 18px;
+  letter-spacing: 0.09em;
+  padding: 11px 20px;
   border: none;
   border-radius: var(--radius-pill);
   cursor: pointer;
   white-space: nowrap;
   flex-shrink: 0;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 6px 18px rgba(169, 149, 96, 0.4);
   transition:
     background var(--dur-base) var(--ease-out),
     transform var(--dur-fast) var(--ease-out);
@@ -99,19 +155,50 @@
   font-size: 16px;
 }
 
-@media (max-width: 560px) {
-  .long {
-    display: none;
-  }
+/* ----- responsive: condense gracefully ----- */
+@media (max-width: 640px) {
   .inner {
-    gap: 10px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding: 8px 16px;
+    gap: 10px 18px;
   }
-  .message {
+  .headline {
     font-size: 13px;
   }
+  .overline {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+  .ticket {
+    font-size: 20px;
+  }
+  .box {
+    min-width: 42px;
+    padding: 5px 6px 4px;
+  }
+  .num {
+    font-size: 20px;
+  }
+  .sep {
+    font-size: 16px;
+    margin-top: 6px;
+  }
   .cta {
-    padding: 9px 14px;
+    padding: 9px 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .countdown {
+    gap: 5px;
+  }
+  .box {
+    min-width: 38px;
+    padding: 4px 5px 3px;
+  }
+  .num {
+    font-size: 18px;
+  }
+  .sep {
+    font-size: 14px;
   }
 }
