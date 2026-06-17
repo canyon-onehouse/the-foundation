@@ -21,7 +21,9 @@ html {
 }
 
 body {
-  overflow-x: hidden;
+  /* `clip` (not `hidden`) prevents horizontal scroll without making body a
+     scroll container, which would break the sticky banner's position:sticky. */
+  overflow-x: clip;
 }
 
 img,

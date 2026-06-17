@@ -162,6 +162,14 @@
   flex-wrap: wrap;
 }
 
+/* One House orange primary CTA (themes the shared BecomeFounderButton vars) */
+.heroCta {
+  --btn-bg: var(--ohp-orange);
+  --btn-fg: var(--ohp-dark);
+  --btn-bg-hover: color-mix(in srgb, var(--ohp-orange) 88%, #000);
+  --btn-shadow: 0 12px 32px rgba(255, 174, 69, 0.3);
+}
+
 .secondaryCta {
   display: inline-flex;
   align-items: center;

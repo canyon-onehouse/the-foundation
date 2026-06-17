@@ -34,9 +34,9 @@ export const IMPACT: ImpactCard[] = [
   },
   {
     overline: "the big picture",
-    title: "building toward a connected system",
+    title: "filling the gap in transitional living",
     blurb:
-      "we're working to launch a system that combines people, staff, and software to connect existing partners — a network that links every party together so no one falls through the gaps.",
+      "we're building the missing middle between emergency shelters, transitional living, and permanent supportive housing — filling the gaps in process, people, and housing availability that fall between these models, and that other nonprofits can't cover because their funding is tied to them.",
     icon: ShareNetworkIcon,
     accent: "green",
     link: {

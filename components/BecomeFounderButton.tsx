@@ -19,7 +19,7 @@ type Props = {
 export function BecomeFounderButton({
   size = "lg",
   arrow = false,
-  label = "become a founder",
+  label = "join the project",
   className,
 }: Props) {
   return (
